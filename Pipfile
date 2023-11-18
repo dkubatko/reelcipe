@@ -11,6 +11,8 @@ pydub = "*"
 speechrecognition = "*"
 openai = "*"
 langdetect = "*"
+autopep8 = "*"
+black = "*"
 
 [dev-packages]
 
