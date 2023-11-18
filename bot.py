@@ -221,7 +221,7 @@ async def handle_translation_button(update: Update, context: ContextTypes.DEFAUL
 
 
 if __name__ == "__main__":
-    application = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).concurrent_updates(True).build()
+    application = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
 
     start_handler = CommandHandler("start", start)
     message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
