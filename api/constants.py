@@ -7,7 +7,7 @@ Use the following template
 <Recipe Title>
 <Ingredients>
 <Instructions>
-with appropriate formatting. Use emoji as you see fit.
+with appropriate formatting.
 
 Given those, please provide me a concise step-by-step recipe with a title, ingredients, and instructions in {language} locale.
 Recipe should be generic, with no hashtags, mentions, or other social media-specific content.
@@ -18,7 +18,10 @@ Please use Telegram-compliant HTML formatting for the recipe. Only use options f
 <u>underline</u>
 <s>strikethrough</s>
 
-DO NOT USE ANY OTHER TAGS OTHER THAN LISTED ABOVE. DO NOT USE ANY OTHER FORMATTING.
+DO NOT USE ANY OTHER TAGS OTHER THAN LISTED ABOVE. 
+DO NOT USE ANY OTHER FORMATTING.
+YOU CAN USE EMOJI.
+USE DASHES (-) FOR LISTS INSTEAD OF <ul> TAGS.
 """
 
 RECIPE_TRANSLATION_TEXT = """
