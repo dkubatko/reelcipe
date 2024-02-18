@@ -25,9 +25,17 @@ logging.basicConfig(
 # Constants for translation
 TRANSLATE_TO_RUSSIAN, TRANSLATE_TO_ENGLISH = "translate_to_ru", "translate_to_en"
 
-instagram_api = InstagramAPI()
-vtt_api = VideoToText()
-gpt_api = GPTConversation()
+# Indicates if the bot is healthy and can process requests.
+# Specifically, monitors connections to external services.
+healthy = True
+
+try:
+    instagram_api = InstagramAPI()
+    vtt_api = VideoToText()
+    gpt_api = GPTConversation()
+except Exception as e:
+    healthy = False
+    logging.error(f"Error initializing external services: {e}", e)
 
 # Cache for recipies to avoid redundant translations
 recipes = {
@@ -48,6 +56,11 @@ def is_reel(text):
 
 
 async def handle_message(update, context):
+    if not healthy:
+        await context.bot.send_message(
+            chat_id=update.effective_chat.id, text=constants.UNHEALTHY_MESSAGE
+        )
+        return
     if not is_reel(update.message.text):
         # In  personal chats, send an error message.
         if update.message.chat.type == "private":

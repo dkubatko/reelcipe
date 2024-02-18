@@ -32,5 +32,6 @@ This is a generated recipe that needs translation to {original_language}. Please
 """
 
 START_MESSAGE = "Welcome to Reelcipe! Send me a link to an Instagram reel and I will transcribe it into a step-by-step recipe."
+UNHEALTHY_MESSAGE = "Sorry, but it seems like I have lost connection to external services. Please try again later!"
 INVALID_MESSAGE = "Hmm... Does not look like an Instagram Reel link to me! Please send me a link to an Instagram Reel and I will convert it to a recipe."
 ERROR_MESSAGE = "Error processing the reel. Please try again with a different link."
